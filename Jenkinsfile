@@ -19,7 +19,6 @@ pipeline{
             }
         }
         
-
         stage('Running locally'){
             steps{
                 echo 'Running.......'
