@@ -18,6 +18,20 @@ pipeline{
                 sh 'npm install'
             }
         }
+
+        stage('Testing'){
+            steps{
+                echo 'Running Test...'
+                sh 'npm test'
+            }
+        }
+
+        stage('Building'){
+            steps{
+                echo 'Building the app...'
+                sh 'npm run build'
+            }
+        }
         
         stage('Deploy'){
             steps{
