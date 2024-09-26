@@ -19,10 +19,11 @@ pipeline{
             }
         }
         
-        stage('Running locally'){
+        stage('Deploy'){
             steps{
-                echo 'Running.......'
-                sh 'nohup node server.js &'
+                withCredentials([usernameColonPassword(credentialsId: '32005260-4b41-4472-a50a-c9fe113215e5', variable: 'HEROKU_CREDENTIALS')]) {
+                   sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/jenkins-ip1.git master' }
+
             }
         }
 
