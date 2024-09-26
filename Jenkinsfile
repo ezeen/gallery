@@ -22,7 +22,7 @@ pipeline{
 
         stage('Running locally'){
             steps{
-                echo 'Running....'
+                echo 'Running.....'
                 sh 'nohup node server.js &'
             }
         }
